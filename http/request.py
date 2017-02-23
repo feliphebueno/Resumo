@@ -5,7 +5,7 @@ Created on 4 de jan de 2017
 '''
 import json, sys
 import requests
-from importacao.http.response import Response
+from resumo.http.response import Response
 from builtins import BaseException
 
 class Request():
