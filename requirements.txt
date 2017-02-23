@@ -1,0 +1,4 @@
+cymysql==0.8.9
+Django==1.10.4
+django-cymysql==0.4.1
+requests==2.12.5
