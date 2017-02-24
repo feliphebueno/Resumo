@@ -1,0 +1,14 @@
+<ul>
+    <li>
+        <span>N&uacute;meros:</span> {{ dados.documentos.identidade.identidade_num|default:'N/I' }}
+    </li>
+    <li>
+        <span>&Oacute;rg&atilde;o emissor:</span> {{ dados.documentos.identidade.ent_classe|default:'N/I' }}
+    </li>
+    <li>
+        <span>UF:</span> {{ dados.documentos.identidade.uf_sigla|default:'N/I' }}
+    </li>
+    <li>
+        <span>Data de Emiss&atilde;o:</span> {{ dados.documentos.identidade.identidade_data_emissao|date:'d/m/Y'|default:'N/I' }}
+    </li>
+</ul>

@@ -1,0 +1,23 @@
+{% extends "theme/base_theme.html" %}
+
+{% block tag_head %}
+    {% include 'theme/tag_head.html' %}
+    <style type="text/css">
+        .desaturate {
+            filter: grayscale(100%);
+        }
+    </style>
+{% endblock %}
+{% block tag_body %}
+    <body class="appRecad">
+
+    {% block theme_content %}
+        {% include "relatorio/content.html" %}
+    {% endblock %}
+
+    {% block theme_scripts %}
+        {% include 'theme/theme_scripts.html' %}
+        {% include 'home/scripts.html' %}
+    {% endblock %}
+    </body>
+{% endblock %}

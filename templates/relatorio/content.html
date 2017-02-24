@@ -1,0 +1,76 @@
+{% load tags %}
+
+<div class="container-fluid">
+    <div class="container-fluid">
+        <div class="main-content container-fluid middle">
+            <div class="row">
+                <div class="panel panel-transparent">
+
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+
+                    <div class="text-center">
+                        <button onclick="document.location.href='{{ URL_APP }}';" class="btn btn-primary" type="button">Nova pesquisa</button>
+                        <button onclick="print();" class="btn btn-primary" type="button">Imprimir</button>
+                        <button onclick="document.location.href='{{ URL_APP }}/relatorio/raw/protocolo/{{ dados.confirmacao.protocolo_limpo }}/';" class="btn btn-primary" type="button">Raw Data</button>
+                    </div>
+
+                    <hr />
+
+                    {# PROTCOLO #}
+                    {% include 'relatorio/rows/protocolo.html'%}
+
+                    <span class="clearfix"></span>
+
+                    <h2>Pessoa</h2>
+
+                    <h3>Perfil</h3>
+                    {% include 'relatorio/rows/perfil.html' %}
+
+                    <h3>Documentos</h3>
+                    {% include 'relatorio/rows/documentos/index.html' %}
+
+                    <h3>Contatos</h3>
+                    {% include 'relatorio/rows/contatos/index.html' %}
+
+                    {% if dados.enderecos|length > 0 %}
+                        <h3>Endere&ccedil;os</h3>
+                        {% include 'relatorio/rows/endereco.html' %}
+                    {% endif %}
+
+                    {% if dependentes|length > 0 %}
+                        <h3>Dependentes</h3>
+                        {% include 'relatorio/rows/dependente.html' %}
+                    {% endif %}
+                    <hr />
+
+                    <h2>Servidor</h2>
+                    {% include 'relatorio/rows/servidor/index.html' %}
+
+                    <hr />
+
+                    <h2>Digitaliza&ccedil;&atilde;o</h2>
+                    {% include 'relatorio/rows/digitalizacao.html' %}
+
+                    <hr />
+                    <h2>Biometria</h2>
+                    {% include 'relatorio/rows/biometria/index.html' %}
+
+                    <hr />
+                    <h2>Confirma&ccedil;&atilde;o</h2>
+                    {% include 'relatorio/rows/confirmacao.html' %}
+
+                    <hr />
+                    <h2>Avalia&ccedil;&atilde;o</h2>
+                    {% include 'relatorio/rows/avaliacao.html' %}
+
+                    <hr />
+                    <div>&nbsp;</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

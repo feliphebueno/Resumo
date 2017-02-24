@@ -1,0 +1,15 @@
+<ul>
+    {% if dados.biometria.direita|length > 0 %}
+        <li>
+            <strong>M&atilde;o direita</strong>
+            {% include 'relatorio/rows/biometria/mao_direita.html' %}
+        </li>
+    {% endif %}
+
+    {% if dados.biometria.esquerda|length > 0 %}
+        <li>
+            <strong>M&atilde;o esquerda</strong>
+            {% include 'relatorio/rows/biometria/mao_esquerda.html' %}
+        </li>
+    {% endif %}
+</ul>

@@ -1,0 +1,22 @@
+<ul>
+    {% for dependente in dependentes %}
+        <li>
+            <strong>{{ dependente.nome|raw }}</strong>
+            <ul>
+                <li>
+                    <span>Tipo:</span> {{ dependente.relacao|raw }}
+                </li>
+                <li>
+                    <span>Sexo:</span> {{ dependente.sexo|replace({'M': "Masculino", 'F': "Feminino"})|raw }}
+                </li>
+
+                <li>
+                    <span>Data de Nascimento:</span> {{ dependente.nascimento|date('d/m/Y') }}
+                </li>       
+                <li>
+                    <span>Tipo de dependência econômica:</span> {{ dependente.dep_econ|raw }}
+                </li>
+            </ul>
+        </li>
+    {% endfor %}
+</ul>

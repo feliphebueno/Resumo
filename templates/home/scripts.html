@@ -1,0 +1,12 @@
+<script>
+    $(document).ready(function () {
+        $("#busca").focus();
+        
+        $("#form").submit(function() {
+            $('.error-message-text').html("Aguarde...");
+            let protocolo = $("#form #busca").val();
+            document.location.href= "{{ URL_APP }}/relatorio/protocolo/"+ protocolo +"/";
+            return false;
+        });
+    });
+</script>

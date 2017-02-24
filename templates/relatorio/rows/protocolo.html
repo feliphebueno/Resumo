@@ -1,0 +1,13 @@
+<div class="info">
+    <ul class=" pull-left">
+        <li class="protocolo"><span>Protocolo:</span> {{ dados.confirmacao.protocolo }}</li>
+        <li><span>Nome:</span> {{ dados.pessoa.nome }}</li>
+        <li><span>CPF:</span> {{ dados.pessoa.cpf }}</li>
+    </ul>
+    <div class="avatar pull-left">
+        <a href="{{ dados.pessoa.foto }}" class="prettyPhoto">
+            <img width="100" src="{{ dados.pessoa.foto }}" alt="{{ dados.pessoa.nome }}" class="img-circle">
+        </a>
+    </div>
+</div>
+<span class="clearfix"></span>

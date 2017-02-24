@@ -1,0 +1,7 @@
+<ul>
+    {% for email in contatos.emails %}
+    <li>
+        <span>Email:</span> {{ email.email|raw }}
+    </li>
+    {% endfor %}
+</ul>

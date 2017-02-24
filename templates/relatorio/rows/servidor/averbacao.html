@@ -1,0 +1,129 @@
+{% for averb in dados.servidor.averbacao %}
+    {% set num = 0 %}
+    {% if(dados.servidor.averbacao['S'] is defined) %}
+        {% for averbacao in dados.servidor.averbacao['S'] %}
+            {% set num = (num + 1) %}
+            <ul>
+                <li><strong>#{{ num }}</strong>
+                    <ul>
+                        <li>
+                            <span>Tipo de Averba&ccedil;o:</span> Privada
+                        </li>
+                        <li>
+                            <span>Dias a descontar:</span> {{ averbacao.averb_dias_desc|default('0') }}
+                        </li>
+                        <li>
+                            <span>Certid&atilde;o:</span> {{ averbacao.averb_cert|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>CNPJ:</span> {{ averbacao.averb_cnpj|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>Cargo:</span> {{ averbacao.averb_cargo|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>Cargo Especial:</span> {{ averbacao.averb_cargo_esp|default('N')|replace({'S':"Sim", 'N': "N&atilde;o" }) }}
+                        </li>
+                        <li>
+                            <span>Concomit&acirc;ncia:</span> {{ averbacao.averb_concomit|default('N')|replace({'S':"Sim", 'N': "N&atilde;o" }) }}
+                        </li>
+                        <li>
+                            <span>Regime:</span> {{ averbacao.averb_regime|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>Data de In&iacute;cio:</span> {{ averbacao.averb_data_inicio|date('d/m/Y')|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>Data de T&eacute;rmino:</span> {{ averbacao.averb_data_fim|date('d/m/Y')|default('N/I') }}
+                        </li> 
+                    </ul>
+                </li>
+            </ul>
+        {% endfor %}
+    {% endif %}
+
+    {% if(dados.servidor.averbacao['P'] is defined) %}
+        {% for averbacao in dados.servidor.averbacao['P'] %}
+            {% set num = (num + 1) %}
+            <ul>
+                <li><strong>#{{ num }}</strong>
+                    <ul>
+                        <li>
+                            <span>Tipo de Averba&ccedil;o:</span> Privada
+                        </li>
+                        <li>
+                            <span>Dias a descontar:</span> {{ averbacao.averb_dias_desc|default('0') }}
+                        </li>
+                        <li>
+                            <span>Certid&atilde;o:</span> {{ averbacao.averb_cert|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>CNPJ:</span> {{ averbacao.averb_cnpj|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>Cargo:</span> {{ averbacao.averb_cargo|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>Cargo Especial:</span> {{ averbacao.averb_cargo_esp|default('N')|replace({'S':"Sim", 'N': "N&atilde;o" }) }}
+                        </li>
+                        <li>
+                            <span>Concomit&acirc;ncia:</span> {{ averbacao.averb_concomit|default('N')|replace({'S':"Sim", 'N': "N&atilde;o" }) }}
+                        </li>
+                        <li>
+                            <span>Regime:</span> {{ averbacao.averb_regime|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>Data de In&iacute;cio:</span> {{ averbacao.averb_data_inicio|date('d/m/Y')|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>Data de T&eacute;rmino:</span> {{ averbacao.averb_data_fim|date('d/m/Y')|default('N/I') }}
+                        </li> 
+                    </ul>
+                </li>
+            </ul>
+        {% endfor %}
+    {% endif %}
+
+    {% if(dados.servidor.averbacao['V'] is defined) %}
+        {% for averbacao in dados.servidor.averbacao['V'] %}
+            {% set num = (num + 1) %}
+            <ul>
+                <li><strong>#{{ num }}</strong>
+                    <ul>
+                        <li>
+                            <span>Tipo de Averba&ccedil;o:</span> Privada
+                        </li>
+                        <li>
+                            <span>Dias a descontar:</span> {{ averbacao.averb_dias_desc|default('0') }}
+                        </li>
+                        <li>
+                            <span>Certid&atilde;o:</span> {{ averbacao.averb_cert|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>CNPJ:</span> {{ averbacao.averb_cnpj|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>Cargo:</span> {{ averbacao.averb_cargo|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>Cargo Especial:</span> {{ averbacao.averb_cargo_esp|default('N')|replace({'S':"Sim", 'N': "N&atilde;o" }) }}
+                        </li>
+                        <li>
+                            <span>Concomit&acirc;ncia:</span> {{ averbacao.averb_concomit|default('N')|replace({'S':"Sim", 'N': "N&atilde;o" }) }}
+                        </li>
+                        <li>
+                            <span>Regime:</span> {{ averbacao.averb_regime|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>Data de In&iacute;cio:</span> {{ averbacao.averb_data_inicio|date('d/m/Y')|default('N/I') }}
+                        </li>
+                        <li>
+                            <span>Data de T&eacute;rmino:</span> {{ averbacao.averb_data_fim|date('d/m/Y')|default('N/I') }}
+                        </li> 
+                    </ul>
+                </li>
+            </ul>
+        {% endfor %}
+    {% endif %}
+
+{% endfor %}

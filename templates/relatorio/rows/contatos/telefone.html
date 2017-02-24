@@ -1,0 +1,12 @@
+<ul>
+    {% for telefone in contatos.telefones.movel %}
+        <li>
+            <span>Móvel:</span> ({{ telefone.ddd|default('XX') }}) {{ telefone.telefone }}
+        </li>
+    {% endfor %}
+    {% for telefone in contatos.telefones.fixo %}
+        <li>
+            <span>Fixo:</span> ({{ telefone.ddd|default('XX') }}) {{ telefone.telefone }}
+        </li>
+    {% endfor %}
+</ul>

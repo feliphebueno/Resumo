@@ -1,0 +1,18 @@
+{% load tags %}
+<ul>
+    <li>
+        <span>Nome:</span> {{ dados.pessoa.nome }}
+    </li>
+    <li>
+        <span>Data de Nascimento:</span> {{ dados.pessoa.nascimento|date:"SHORT_DATE_FORMAT" }}
+    </li>
+    <li>
+        <span>Sexo:</span> {{ dados.pessoa.sexo|replace:'{"M": "Masculino", "F": "Feminino"}' }}
+    </li>
+    <li>
+        <span>Escolaridade:</span> {{ dados.pessoa.escolaridade }}
+    </li>    
+    <li>
+        <span>Estado Civil:</span> {{ dados.pessoa.estado_civil }}
+    </li>    
+</ul>

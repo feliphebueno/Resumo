@@ -1,0 +1,9 @@
+{% if dados.servidor.matriculas|length > 0 %}
+    <h3>Matr&iacute;culas</h3>
+    {% include 'relatorio/rows/servidor/matricula.html' %}
+{% endif %}
+
+{% if dados.servidor.averbacao|length > 0 %}
+    <h3>Averba&ccedil;&atilde;o</h3>
+    {% include 'relatorio/rows/servidor/averbacao.html' %}
+{% endif %}

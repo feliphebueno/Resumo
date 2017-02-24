@@ -1,0 +1,12 @@
+<ul class="list-inline bxslider">
+    {% for bio in dados.biometria.direita %}
+        <li>
+            <figure class="html5">
+                <a href="{{ bio.url }}" class="prettyPhoto">
+                    <img width="103" src="{{ bio.url }}" alt="Digital: {{ bio.nome }}" />
+                </a>
+                <figcaption class="text-center">{{ bio.nome }}</figcaption>
+            </figure>
+        </li>
+    {% endfor %}
+</ul>

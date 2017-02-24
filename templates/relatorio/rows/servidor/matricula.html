@@ -1,0 +1,9 @@
+{% for linha in dados.servidor.matriculas %}
+    <ul>
+        <li><span>Numero:</span> {{ linha.matricula|default:'N/I' }}</li>
+        <li><span>Entidade:</span> {{ linha.entidade.entidade_nome|upper|default:'N/I'}}</li>
+        <li><span>Lota&ccedil;&atilde;o:</span> {{ linha.lotacao.lotacao_nome|upper|default:'N/I'}}</li>
+        <li><span>Local:</span> {{ linha.local.local_nome|upper|default:'N/I'}}</li>
+        <li><span>Cargo:</span> {{ linha.cargo.cargo_nome|upper|default:'N/I'}}</li>
+    </ul>
+{% endfor %}

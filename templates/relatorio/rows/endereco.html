@@ -1,0 +1,28 @@
+{% for endereco in dados.enderecos %}
+    <ul>
+        <li>
+            <span>CEP:</span> {{ endereco.cep|default:'N/I' }}
+        </li>
+        <li>
+            <span>Tipo do Logradouro:</span> {{ endereco.tipo_logradouro|default:'N/I' }}
+        </li>
+        <li>
+            <span>Logradouro:</span> {{ endereco.endereco|default:'N/I' }}
+        </li>
+        <li>
+            <span>N&uacute;mero:</span> {{ endereco.endereco_num|default:'N/I' }}
+        </li> 
+        <li>
+            <span>Complemento:</span> {{ endereco.complemento|default:'N/I' }}
+        </li> 
+        <li>
+            <span>UF:</span> {{ endereco.uf.uf_sigla|default:'N/I' }}
+        </li>
+        <li>
+            <span>Cidade:</span> {{ endereco.cidade.cidade|default:'N/I' }}
+        </li>
+        <li>
+            <span>Bairro:</span> {{ endereco.bairro.bairro|default:'N/I' }}
+        </li>
+    </ul>
+{% endfor %}

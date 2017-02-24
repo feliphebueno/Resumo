@@ -1,0 +1,11 @@
+<ul>
+    <li>
+        <span>N&uacute;meros:</span> {{ dados.documentos.ctps.ctps_num|default:'N/I' }}
+    </li>
+    <li>
+        <span>S&eacute;rie:</span> {{ dados.documentos.ctps.ctps_serie|default:'N/I' }}
+    </li>
+    <li>
+        <span>Data de Emiss&atilde;o:</span> {{ dados.documentos.ctps.ctps_data_emissao|date:'d/m/Y'|default:'N/I' }}
+    </li>
+</ul>

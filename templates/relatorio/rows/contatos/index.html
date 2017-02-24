@@ -1,0 +1,15 @@
+<ul>
+    {% if contatos.telefones.movel|length > 0 or contatos.telefones.fixo|length > 0%}
+        <li>
+            <strong>Telefones</strong>
+            {% include 'relatorio/rows/contatos/telefone.twig' %}
+        </li>
+    {% endif %}
+
+    {% if contatos.emails|length > 0 %}
+        <li>
+            <strong>Emails</strong>
+            {% include 'relatorio/rows/contatos/email.twig' %}
+        </li>
+    {% endif %}
+</ul>

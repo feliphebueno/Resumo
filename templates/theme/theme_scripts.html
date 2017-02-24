@@ -1,0 +1,23 @@
+{% load static %}
+<!-- ASSETS STATICS -->
+<script src="{% static 'assets/js/jquery.min.js' %}" type="text/javascript"></script>
+<script src="{{ URL_STATIC }}/node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- ASSETS LOCAIS -->
+<script src="{% static 'assets/js/jquery.bxslider.js' %}" type="text/javascript"></script>
+<link rel="stylesheet" href="{% static 'assets/css/jquery.bxslider.css' %}" />
+
+<link rel="stylesheet" href="{% static 'assets/css/prettyPhoto.css' %}" type="text/css" media="screen" charset="utf-8" />
+<script src="{% static 'assets/js/jquery.prettyPhoto.js' %}"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $(".prettyPhoto").prettyPhoto({
+            theme: 'facebook',
+            social_tools: ''
+
+        });
+    });
+</script>

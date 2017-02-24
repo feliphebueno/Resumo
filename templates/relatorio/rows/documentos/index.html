@@ -1,0 +1,18 @@
+<ul>
+    <li>
+        <strong>Identidade</strong>
+        {% include 'relatorio/rows/documentos/rg.html' %}
+    </li>
+    {% if dados.documentos.ctps|length > 0 %}
+    <li>
+        <strong>Carteira de Trabalho</strong>
+        {% include 'relatorio/rows/documentos/ctps.html' %}
+    </li>
+    {% endif %}
+    {% if dados.documentos.titulo_eleitoral|length > 0 %}
+    <li>
+        <strong>T&iacute;tulo de Eleitor</strong>
+        {% include 'relatorio/rows/documentos/titulo_eleitor.html' %}
+    </li>
+    {% endif %}
+</ul>
