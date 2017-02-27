@@ -64,13 +64,13 @@ class Relatorio(object):
     def preparaDadosRelatorio(self, dados):
 
         pessoa = {
-            'foto'          : dados['pessoa']['foto'],
-            'nome'          : dados['pessoa']['nome'],
-            'cpf'           : "{0}.{1}.{2}-{3}".format(dados['pessoa']['cpf'][0:3], dados['pessoa']['cpf'][3:6], dados['pessoa']['cpf'][6:9], dados['pessoa']['cpf'][9:12]),
-            'nascimento'    : datetime.strptime(dados['pessoa']['nascimento'], '%Y-%m-%d'),
-            'sexo'          : dados['pessoa']['sexo'],
-            'estado_civil'  : dados['pessoa']['estado_civil']['est_civil_nome'],
-            'escolaridade'  : dados['pessoa']['escolaridade']['escol_nome']
+            'foto': dados['pessoa']['foto'],
+            'nome': dados['pessoa']['nome'],
+            'cpf': "{0}.{1}.{2}-{3}".format(dados['pessoa']['cpf'][0:3], dados['pessoa']['cpf'][3:6], dados['pessoa']['cpf'][6:9], dados['pessoa']['cpf'][9:12]),
+            'nascimento': datetime.strptime(dados['pessoa']['nascimento'], '%Y-%m-%d'),
+            'sexo': dados['pessoa']['sexo'],
+            'estado_civil': dados['pessoa']['estado_civil']['est_civil_nome'],
+            'escolaridade': dados['pessoa']['escolaridade']['escol_nome']
         }
 
         documentos = {
@@ -79,8 +79,8 @@ class Relatorio(object):
             'titulo_eleitoral': dados['pessoa']['titulo_eleitoral']
         }
 
-        documentos['ctps']['ctps_data_emissao']             = datetime.strptime(dados['pessoa']['ctps']['ctps_data_emissao'], '%Y-%m-%d') if 'ctps_data_emissao' in dados['pessoa']['ctps'] else None
-        documentos['identidade']['identidade_data_emissao'] = datetime.strptime(dados['pessoa']['identidade']['identidade_data_emissao'], '%Y-%m-%d')
+        documentos['ctps']['ctps_data_emissao'] = datetime.strptime(dados['pessoa']['ctps']['ctps_data_emissao'], '%Y-%m-%d') if 'ctps_data_emissao' in dados['pessoa']['ctps'] else None
+        documentos['identidade']['identidade_data_emissao'] = datetime.strptime(dados['pessoa']['identidade']['identidade_data_emissao'], '%Y-%m-%d') if 'identidade_data_emissao' in dados['pessoa']['identidade'] else None
 
         contatos = {
             'telefones': self.organizaTelefones(dados['pessoa']['telefones']),
@@ -92,11 +92,11 @@ class Relatorio(object):
             'matriculas': self.organizaMatriculas(dados['matriculas']),
         }
 
-        confirmacao                 = dados['confirmacao']
-        confirmacao['data_hora']    = datetime.strptime(dados['confirmacao']['data_hora'], '%Y-%m-%d %H:%M:%S')
+        confirmacao = dados['confirmacao']
+        confirmacao['data_hora'] = datetime.strptime(dados['confirmacao']['data_hora'], '%Y-%m-%d %H:%M:%S') if 'data_hora' in dados['confirmacao'] else None
 
-        avaliacao                 = dados['avaliacao'] if 'avaliacao' in dados else dict()
-        avaliacao['data_hora']    = datetime.strptime(avaliacao['data_hora'], '%Y-%m-%d %H:%M:%S') if 'data_hora' in avaliacao else None
+        avaliacao = dados['avaliacao'] if 'avaliacao' in dados else dict()
+        avaliacao['data_hora'] = datetime.strptime(avaliacao['data_hora'], '%Y-%m-%d %H:%M:%S') if ('data_hora' in avaliacao and type(avaliacao['data_hora']) == 'str') else None
 
         confirmacao['protocolo_limpo'] = dados['confirmacao']['protocolo']
         confirmacao['protocolo'] = "{0}-{1}-{2}".format(dados['confirmacao']['protocolo'][0:4], dados['confirmacao']['protocolo'][4:8], dados['confirmacao']['protocolo'][8:12])

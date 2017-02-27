@@ -1,5 +1,5 @@
 {% load tags %}
 <ul>
-    <li><span>Selecionado:</span> {{ dados.avaliacao.aval_sel|replace:'{"I": "Insatisfeito", "S": "Satisfeito", "T": "Totalmente satisfeito"}' }}</li>
-    <li><span>Data:</span> {{ dados.avaliacao.data_hora|date:'d/m/Y H:i:s' }}</li>
+    <li><span>Selecionado:</span> {{ dados.avaliacao.aval_sel|replace:'{"I": "Insatisfeito", "S": "Satisfeito", "T": "Totalmente satisfeito"}'|default:"N/I" }}</li>
+    <li><span>Data:</span> {{ dados.avaliacao.data_hora|date:'d/m/Y H:i:s'|default:"N/I" }}</li>
 </ul>
