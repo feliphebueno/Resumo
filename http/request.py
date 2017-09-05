@@ -39,17 +39,23 @@ class Request():
         self.__setMethod("GET")
         return self.__request(end_point)
 
-    def post(self, end_point='/', payload=dict()):
+    def post(self, end_point='/', payload=None):
+        if payload is None:
+            payload = dict()
         self.__setMethod("POST")
         self.__setPayload(payload)
         return self.__request(end_point)
 
-    def put(self, end_point='/', payload=dict()):
+    def put(self, end_point='/', payload=None):
+        if payload is None:
+            payload = dict()
         self.__setMethod("PUT")
         self.__setPayload(payload)
         return self.__request(end_point)
 
-    def delete(self, end_point='/', payload=dict()):
+    def delete(self, end_point='/', payload=None):
+        if payload is None:
+            payload = dict()
         self.__setMethod("DELETE")
         self.__setPayload(payload)
         return self.__request(end_point)
